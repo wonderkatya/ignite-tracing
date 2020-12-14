@@ -1,0 +1,20 @@
+<property name="discoverySpi">
+    <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
+        <property name="localPort" value="47500"/>
+        <property name="ipFinder">
+            <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
+                <property name="addresses">
+                    <list>
+                        <value>localhost</value>
+                        <value>localhost:47500</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
+</property>
+<property name="communicationSpi">
+<bean class="org.apache.ignite.spi.communication.tcp.TcpCommunicationSpi">
+    <property name="localPort" value="47100"/>
+</bean>
+</property>

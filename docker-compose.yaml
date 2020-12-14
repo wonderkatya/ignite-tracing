@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  ignite:
+    image: "apacheignite/ignite"
+    environment:
+      - IGNITE_QUIET=false
+    volumes:
+    - .resources/ignite-main.xml:/opt/ignite/apache-ignite-fabric/config/default-config.xml
+    ports:
+      - 11211:11211
+      - 47100:47100
+      - 47500:47500
+      - 49112:49112
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "6831:6831/udp"
+      - "16686:16686"

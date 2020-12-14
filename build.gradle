@@ -1,0 +1,41 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'ru.tele2.rtcm'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext['h2.version'] = '1.4.196'
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.apache.ignite:ignite-core:2.9.0'
+	implementation 'org.apache.ignite:ignite-spring:2.9.0'
+	implementation 'org.apache.ignite:ignite-ml:2.9.0'
+	implementation 'org.apache.ignite:ignite-slf4j:2.9.0'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'io.opentracing.contrib:opentracing-spring-cloud-starter:0.5.9'
+	implementation 'io.jaegertracing:jaeger-client:1.5.0'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
