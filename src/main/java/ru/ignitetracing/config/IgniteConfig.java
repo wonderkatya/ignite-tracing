@@ -1,4 +1,4 @@
-package ru.tele2.rtcm.ignitetracing.config;
+package ru.ignitetracing.config;
 
 import io.opentracing.Tracer;
 import lombok.RequiredArgsConstructor;
@@ -10,12 +10,10 @@ import org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi;
 import org.apache.ignite.spi.discovery.tcp.ipfinder.multicast.TcpDiscoveryMulticastIpFinder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.tele2.rtcm.ignitetracing.dto.Content;
+import ru.ignitetracing.dto.Content;
 
 import java.math.BigDecimal;
 import java.util.Collections;
-
-import static ru.tele2.rtcm.ignitetracing.config.CacheNames.CONTENT_CACHE;
 
 @Configuration
 @RequiredArgsConstructor
@@ -43,7 +41,7 @@ public class IgniteConfig {
 
     }
 
-    @Bean(CONTENT_CACHE)
+    @Bean(CacheNames.CONTENT_CACHE)
     public IgniteCache<BigDecimal, Content> contactCache(Ignite ignite) {
         return ignite.getOrCreateCache(cacheConfig.contentCacheConfiguration());
     }

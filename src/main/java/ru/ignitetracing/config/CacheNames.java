@@ -1,4 +1,4 @@
-package ru.tele2.rtcm.ignitetracing.config;
+package ru.ignitetracing.config;
 
 import lombok.experimental.UtilityClass;
 

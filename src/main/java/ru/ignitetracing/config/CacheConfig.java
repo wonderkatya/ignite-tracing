@@ -1,4 +1,4 @@
-package ru.tele2.rtcm.ignitetracing.config;
+package ru.ignitetracing.config;
 
 import org.apache.ignite.cache.CacheAtomicityMode;
 import org.apache.ignite.cache.CacheMode;
@@ -6,7 +6,7 @@ import org.apache.ignite.cache.affinity.rendezvous.RendezvousAffinityFunction;
 import org.apache.ignite.configuration.CacheConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.tele2.rtcm.ignitetracing.dto.Content;
+import ru.ignitetracing.dto.Content;
 
 import java.math.BigDecimal;
 

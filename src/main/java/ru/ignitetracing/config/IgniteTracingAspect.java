@@ -1,4 +1,4 @@
-package ru.tele2.rtcm.ignitetracing.config;
+package ru.ignitetracing.config;
 
 import io.opentracing.Span;
 import io.opentracing.Tracer;
@@ -37,6 +37,9 @@ public class IgniteTracingAspect {
         span.setTag("cache.name", cacheName);
         try {
             return pjp.proceed();
+        } catch (Throwable throwable) {
+            span.setTag("error", true);
+            return null;
         } finally {
             span.finish();
         }

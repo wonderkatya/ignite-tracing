@@ -1,4 +1,4 @@
-package ru.tele2.rtcm.ignitetracing.dto;
+package ru.ignitetracing.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package ru.tele2.rtcm.ignitetracing;
+package ru.ignitetracing;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
